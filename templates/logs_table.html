@@ -1,0 +1,87 @@
+<!--<!DOCTYPE html>-->
+<!--<html lang="en">-->
+<!--<head>-->
+<!--    <meta charset="UTF-8">-->
+<!--    <meta name="viewport" content="width=device-width, initial-scale=1.0">-->
+<!--    <title>WAa</title>-->
+<!--    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">-->
+<!--</head>-->
+<!--<body>-->
+<!--    <table class="table table-dark">-->
+<!--        <thead>-->
+<!--            <tr align="center">-->
+<!--                <th scope="col"><strong><i>Sent to</i></strong></th>-->
+<!--                <th scope="col"><strong><i>Timestamp</i></strong></th>-->
+<!--            </tr>-->
+<!--        </thead>-->
+<!--        <tbody>-->
+<!--            {% for key, value in logs.items() %}-->
+<!--                <tr>-->
+<!--                    <td align="center">{{ key }}</td>-->
+<!--                    <td align="center">{{ value }}</td>-->
+<!--                </tr>-->
+<!--            {% endfor %}-->
+<!--        </tbody>-->
+<!--    </table>-->
+<!--</body>-->
+<!--</html>-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WAa</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <!-- Include jspdf library -->
+    <style>
+
+        .center-block {
+            display: block;
+            margin-right: auto;
+            margin-left: auto;
+        }
+
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+</head>
+<body>
+    <table class="table table-dark">
+        <thead>
+            <tr align="center">
+                <th scope="col"><strong><i>Sent to</i></strong></th>
+                <th scope="col"><strong><i>Timestamp</i></strong></th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for key, value in logs.items() %}
+                <tr>
+                    <td align="center">{{ key }}</td>
+                    <td align="center">{{ value }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <!-- Add a button to trigger PDF download -->
+    <br>
+    <a href="http://192.168.1.49:5001/download_pdf"><button class="center-block">Download PDF</button></a>
+<!--    <input class="center-block" type="button" onclick="downloadPDF()" value="Download as PDF"/>-->
+
+<!--    &lt;!&ndash; Add JavaScript code for PDF generation &ndash;&gt;-->
+<!--    <script>-->
+<!--        function downloadPDF() {-->
+<!--            // Ensure AutoTable plugin is also included if not part of your jsPDF version-->
+<!--            const doc = new jsPDF();-->
+<!--            // Use 'autoTable' to add table from HTML-->
+<!--            doc.autoTable({-->
+<!--                html: 'table', // Use the correct selector to target your table-->
+<!--                theme: 'grid',-->
+<!--                styles: { fillColor: [255, 255, 255], textColor: [0, 0, 0] }, // Optional: styles to match your table's theme-->
+<!--                didDrawCell: (data) => {},-->
+<!--            });-->
+<!--            doc.save('table.pdf');-->
+<!--    }-->
+<!--    </script>-->
+</body>
+</html>
