@@ -194,4 +194,4 @@ if __name__ == "__main__":
     # # print("RECEIVERS: ", recp_list)  # Receivers
     # message = wa_automation(recp_list, file_contents, content_pic_vid)
     # print(message)
-    app.run(host='0.0.0.0', port=5001)
+    app.run(host='0.0.0.0', port=5000)
