@@ -12,7 +12,6 @@ COPY req.txt /app/req.txt
 
 # Install dependencies
 RUN apt-get update && \
-    apt-get install -y xvfb && \
     pip install --upgrade pip && \
     pip install -r req.txt && \
     playwright install && \
@@ -21,4 +20,4 @@ RUN apt-get update && \
 EXPOSE 5000
 
 # Set the entry point for the container
-CMD ["xvfb-run", "python3", "Automation.py"]
+CMD ["python3", "Automation.py"]
